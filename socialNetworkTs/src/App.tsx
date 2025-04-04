@@ -3,53 +3,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 
-// let a: number = 10;
-// let name: string = "Madi";
-// let massiv: Array<string> = ["hello", "world"]
-//
-// type userDataType = {
-//     name: string,
-//     email: string,
-//     age: number,
-//     isSamurai: boolean,
-//     address: AddressType | null,
-// }
-// type AddressType = {
-//     country: string,
-//     city: string,
-//     state?: string,
-// }
-//
-// let userData: userDataType = {
-//     name: "Madi",
-//     email: "madi@madi.com",
-//     age: 20,
-//     isSamurai: true,
-//     address: {
-//         country: "United States",
-//         city: "United States",
-//         state: "United States",
-//     }
-// }
-//
-// let state = {
-//     name: null as string | null,
-//     email: null as string | null,
-//     age: null as number | null,
-//     isSamurai: true as boolean | null,
-//     address: {
-//         country: null as string | null,
-//         city: null as string | null,
-//         state: null as string | null,
-//     }
-// }
-//
-// let superState = {
-//     name: "madi",
-// }
-//
-// export type state = typeof superState;
-//
 
 function App() {
     return (
