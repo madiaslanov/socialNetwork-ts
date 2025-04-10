@@ -1,0 +1,35 @@
+.holder{
+    background-color: rgba(21, 34, 42, .9);
+    border: 1px solid rgba(112, 128, 144, .9);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 5px;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.people{
+    cursor: pointer;
+    width: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+.image{
+    border-radius: 8px;
+    display: block;
+    height: 50px;
+    margin: 0 auto;
+    object-fit: cover;
+    width: 50px;
+}
+
+.text{
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}

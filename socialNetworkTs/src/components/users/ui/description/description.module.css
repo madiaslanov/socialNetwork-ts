@@ -1,0 +1,106 @@
+.smileImg{
+    border-radius: 10%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.leftSide{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    gap: 10px;
+    text-align: start;
+    padding: 10px;
+}
+
+.rightSide{
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    border: 1px solid rgba(112, 128, 144, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.description{
+    border-radius: 15px;
+    width: 60%;
+}
+
+.description h1{
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    font-weight: 500;
+}
+.description {
+    color: white;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+
+.followBtn{
+        display: flex;
+        margin: 10px auto 0;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 25px;
+        border: 1px solid rgba(112, 128, 144, 0.9);
+        border-radius: 8px;
+        text-align: center;
+        color: white;
+        background: none;
+        outline: none;
+        cursor: pointer;
+
+}
+
+.unFollowBtn{
+        display: flex;
+        margin: 10px auto 0;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 25px;
+        border: 1px solid rgba(112, 128, 144, 0.9);
+        border-radius: 8px;
+        text-align: center;
+        color: white;
+        background: none;
+        outline: none;
+        cursor: pointer;
+}
+
+.followBtn:hover{
+    color: aquamarine;
+    border: 1px solid aquamarine;
+}
+.unFollowBtn:hover{
+    color: aquamarine;
+    border: 1px solid aquamarine;
+}
+
+
+.followBtn:disabled{
+    background: rgba(112, 128, 144, 0.13);
+    color: rgba(112, 128, 144, 0.9);
+    cursor: not-allowed;
+}
+
+.unFollowBtn:disabled{
+    background: rgba(112, 128, 144, 0.13);
+    color: rgba(112, 128, 144, 0.9);
+    cursor: not-allowed;
+}
