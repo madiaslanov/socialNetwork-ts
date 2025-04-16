@@ -1,0 +1,13 @@
+.form p{
+    padding: 0;
+    margin: 13px 0 0;
+    color: white;
+}
+
+.errors{
+    text-align: justify;
+    font-size: 15px;
+    margin: 5px auto;
+    color: tomato;
+    font-weight: 600;
+}

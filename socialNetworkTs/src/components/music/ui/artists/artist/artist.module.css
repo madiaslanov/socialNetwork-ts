@@ -1,0 +1,114 @@
+.titleHolder{
+    display: flex;
+    padding: 5px;
+    gap: 20px;
+}
+
+.titleHolder img{
+    border-radius: 15px;
+}
+
+.description p{
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+
+.description h1{
+    color: white;
+    font-size: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+.description a{
+    color: white;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+.description a:hover{
+    color: aquamarine;
+}
+.description h3{
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+}
+.description {
+    padding-top: 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tracksList{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.trackItems{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.trackItems:hover{
+    background-color: rgb(0 0 0 / 0.5);
+    color: #fff;
+    border-radius: 10px;
+}
+
+
+.listElement  p{
+    color: white;
+}
+
+
+.listElement  a{
+    color: white;
+    text-decoration: none;
+}
+.listElement  a:hover{
+    text-decoration: underline;
+}
+
+
+.playBtn{
+    background-image: url('../img/white-play-icon.webp');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.leftSideList{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.rightSideList{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.rightSideList p{
+    width: 6rem;
+    align-items: center;
+    text-align: center;
+}

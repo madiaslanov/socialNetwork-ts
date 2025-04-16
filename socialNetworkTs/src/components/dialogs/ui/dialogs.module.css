@@ -1,0 +1,55 @@
+.generalDialog {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialogs{
+  display: flex;
+  gap: 10rem;
+}
+
+.dialogsItem{
+  padding: 10px;
+}
+
+.messages{
+  padding: 10px;
+}
+
+.error{
+  text-align: justify;
+  font-size: 15px;
+  margin: 5px auto;
+  color: tomato;
+  font-weight: 600;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.form button{
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: beige;
+  border: 1px solid silver;
+}
+
+.form input{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+.form input:focus{
+  outline: none;
+  border-color: #c16608;
+}
+
+.main{
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+}

@@ -1,8 +1,8 @@
 import {
-    ProfileStateType, AboutMeType
+    ProfileStateType, AboutMeType, NewPost, PhotosType
 } from "./profileTypes.ts";
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {getProfileStatusApi, putAboutMeApi, putPhotoApi, putProfileStatusApi} from "../api";
+import {getProfileApi, getProfileStatusApi, putAboutMeApi, putPhotoApi, putProfileStatusApi} from "../api";
 
 const initialState: ProfileStateType = {
     postsData: [],
@@ -67,6 +67,27 @@ export const profileAboutMe = createAsyncThunk<AboutMeType, AboutMeType, {reject
     }
 )
 
+export const getProfile = createAsyncThunk<{
+    profileId: number,
+    aboutMe: AboutMeType,
+    photos: PhotosType,
+}, number, { rejectValue: string }>(
+    "profile/getProfile",
+    async (userId, { rejectWithValue }) => {
+        try {
+            const response = await getProfileApi(userId);
+            return {
+                profileId: userId,
+                aboutMe: response.aboutMe,
+                photos: response.photos,
+            };
+        } catch (err: any) {
+            return rejectWithValue(err.message);
+        }
+    }
+);
+
+
 
 const profileSlice = createSlice({
     name: "profile",
@@ -75,6 +96,9 @@ const profileSlice = createSlice({
         setStatus(state, action: PayloadAction<string>) {
             state.status = action.payload;
         },
+        addPost(state, action: PayloadAction<NewPost>) {
+            state.postsData.push(action.payload)
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -89,11 +113,18 @@ const profileSlice = createSlice({
             })
             .addCase(profileAboutMe.fulfilled, (state, action) => {
                 state.aboutMe = action.payload;
+            })
+            .addCase(getProfile.fulfilled, (state, action) => {
+                state.profileId = action.payload.profileId;
+                state.aboutMe = action.payload.aboutMe;
+                state.photos = action.payload.photos;
             });
+
+        ;
     },
 });
 
-export const {setStatus} = profileSlice.actions;
+export const {setStatus, addPost} = profileSlice.actions;
 export default profileSlice.reducer;
 
 

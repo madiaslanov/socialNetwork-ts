@@ -1,0 +1,43 @@
+.posts{
+  padding: 10px;
+
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.error{
+  text-align: justify;
+  font-size: 15px;
+  margin: 5px auto;
+  color: tomato;
+  font-weight: 600;
+}
+
+.button{
+  background-color: #708090;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  width: 50%;
+  margin: auto 3px;
+  padding: 2px 0;
+}
+.input{
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 100%;
+  outline: none;
+  width: 45%;
+  margin: auto 3px;
+  padding: 1px 0;
+}
+input:focus{
+  outline: none;
+  border-color: #c16608;
+}

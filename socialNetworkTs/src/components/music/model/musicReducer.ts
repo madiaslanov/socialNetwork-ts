@@ -1,6 +1,6 @@
 import {
     Album,
-    Artist, MusicState, Track
+    Artist, MusicState, Track, TrackType
 } from "./musicTypes.ts";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {musicApi} from "../api";
@@ -64,7 +64,7 @@ export const getArtistTopTracks = createAsyncThunk<Track[], string, { rejectValu
 
     }
 );
-export const getTrack = createAsyncThunk<Track, string, { rejectValue: string }>(
+export const getTrack = createAsyncThunk<TrackType, string, { rejectValue: string }>(
     "music/getTrack",
     async (trackId, {rejectWithValue}) => {
         try {
@@ -115,7 +115,7 @@ const musicSlice = createSlice({
                 state.artistsData = action.payload;
             })
             .addCase(getTrack.fulfilled, (state, action) => {
-                state.trackId = action.payload.id;
+                state.trackId = action.payload;
             })
             .addCase(getAlbums.fulfilled, (state, action) => {
                 state.albums = action.payload;
@@ -124,7 +124,7 @@ const musicSlice = createSlice({
                 state.tracks = action.payload;
             })
             .addCase(getAlbum.fulfilled, (state, action) => {
-                state.albumId = action.payload.id;
+                state.albumId = action.payload;
             })
             .addMatcher(
                 (action) => action.type.startsWith('music/') && action.type.endsWith('/rejected'),

@@ -1,0 +1,71 @@
+.description{
+  padding: 10px;
+  display: flex;
+}
+.imageHolder{
+  height: 350px;
+  position: relative;
+  width: 50%;
+}
+
+.imageHolder img{
+  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  width: 95%;
+}
+
+.status{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+b{
+  font-size: 15px;
+}
+
+.statusSpan{
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  color: white;
+  gap: 5px;
+}
+
+.statusSpan:hover{
+  color: aquamarine;
+}
+
+.editBtn{
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  height: 20px;
+  margin: 10px 0 0;
+  width: 100px;
+}
+
+.editBtn:hover{
+  background-color: aquamarine;
+  color: slategrey;
+}
+.rightSide{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.link{
+  text-decoration: none;
+  color: white;
+}
+.link:hover{
+  color: aquamarine;
+}

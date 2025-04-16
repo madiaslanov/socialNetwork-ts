@@ -1,0 +1,30 @@
+.main{
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.music{
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 35px;
+    background-color: rgba(0,0,0,0.40);
+}
+.music:hover{
+    background-color: aquamarine;
+    color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-top: 10px;
+}

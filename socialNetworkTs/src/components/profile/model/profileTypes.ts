@@ -3,17 +3,19 @@ export type AboutMeType = {
     aboutMe: string | null,
     lookingForAJob: boolean | null,
     lookingForAJobDescription: string | null,
-    contacts: string | null
+    contacts: {
+        [key: string]: string;
+    }
 };
 export type PhotosType = {
     large: string | null ,
     small: string | null
 }
 
-export type NewPost = {
-    message: string,
-    id: number,
-    count : number;
+export interface NewPost  {
+    message: string;
+    id: number;
+    count : number ;
 }
 
 export type ProfileStateType = {
@@ -23,3 +25,12 @@ export type ProfileStateType = {
     photos: PhotosType | null | File;
     aboutMe: AboutMeType | null;
 };
+
+
+export interface ProfileFormFields {
+    fullName: string;
+    aboutMe: string;
+    lookingForAJob: boolean;
+    lookingForAJobDescription: string;
+    contactsGithub: string;
+}
