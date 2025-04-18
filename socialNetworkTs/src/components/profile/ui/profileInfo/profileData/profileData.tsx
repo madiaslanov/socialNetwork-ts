@@ -14,16 +14,16 @@ const ProfileData: React.FC<ProfileDataProps> = ({ profileData }) => {
     return (
         <div className={st.status}>
             <div>
-                <b>Full Name:</b> {profileData.fullName}
+                <b>Full Name:</b> <b>{profileData.fullName}</b>
             </div>
             <div>
-                <b>Looking for a job:</b> {profileData.lookingForAJob ? "Yes" : "No"}
+                <b>Looking for a job:</b> <b>{profileData.lookingForAJob ? "Yes" : "No"}</b>
             </div>
             <div>
-                <b>About Me:</b> {profileData.aboutMe}
+                <b>About Me:</b> <b>{profileData.aboutMe}</b>
             </div>
             <div>
-                <b>My Professional Skills:</b> {profileData.lookingForAJobDescription}
+                <b>My Professional Skills:</b> <b>{profileData.lookingForAJobDescription}</b>
             </div>
 
             {contactKeys.length > 0 && (

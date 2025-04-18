@@ -1,0 +1,56 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.title{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+    color: white;
+}
+
+.input{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px auto;
+    background-color: #ffffff;
+}
+input:focus{
+    outline: none;
+    border-color: #c16608;
+}
+.error{
+    text-align: justify;
+    font-size: 15px;
+    margin: 5px auto;
+    color: tomato;
+    font-weight: 600;
+}
+
+.button{
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: beige;
+    border: 1px solid silver;
+    color: black;
+}
+.remember{
+    color: white;
+}
+
+.freeAccount{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.freeAccount p{
+    text-align: center;
+    margin: 5px 0 5px 0;
+}

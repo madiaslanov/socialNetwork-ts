@@ -24,6 +24,10 @@
   color: white;
 }
 
+.status b{
+  font-size: 17px;
+}
+
 b{
   font-size: 15px;
 }
@@ -68,4 +72,7 @@ b{
 }
 .link:hover{
   color: aquamarine;
+}
+.contact a{
+  font-size: 18px;
 }

@@ -9,17 +9,17 @@ import {UseAppDispatch, UseAppSelector} from "../../../../services/reactHooks/re
 
 const Albums = () => {
     const dispatch = UseAppDispatch();
-    const albumsData = UseAppSelector((state) => state.musicPages.albums);
+    const albumsData = UseAppSelector((state) => state.musicPages.albums.items);
+
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         dispatch(getAlbums()).finally(() => setLoading(false));
-    },[dispatch])
+    }, [dispatch])
 
     if (loading) {
-        return <Preloader />;
+        return <Preloader/>;
     }
-
     return <div>
         <div className={styles.listHolder}>
             {albumsData && albumsData.length > 0 ? (

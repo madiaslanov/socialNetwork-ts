@@ -45,7 +45,7 @@ const ProfileContainer = () => {
     };
 
     const isOwner = !userID || myId?.toString() === userID.toString();
-    const profileData = UseAppSelector((state) => state.profilePages.profileId);
+    const profileData = UseAppSelector((state) => state.profilePages.aboutProfile);
     const profileStatus = UseAppSelector((state) => state.profilePages.status);
     const profilePhoto = UseAppSelector((state) => state.profilePages.photos);
 

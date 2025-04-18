@@ -1,7 +1,7 @@
 import styles from "./music.module.css";
 import {NavLink} from "react-router-dom";
 
-const MusicApi = () => {
+const MusicContainer = () => {
     return <>
         <div className={styles.container}>
             <NavLink to={"/music/artists"} className={styles.music}> Artists </NavLink>
@@ -13,4 +13,4 @@ const MusicApi = () => {
     </>
 }
 
-export default MusicApi;
+export default MusicContainer;

@@ -39,13 +39,25 @@ export interface Album {
     };
 }
 
+export interface AlbumsResponse {
+    href: string;
+    items: Album[];
+    limit: number;
+    next: string | null;
+    offset: number;
+    previous: string | null;
+    total: number;
+}
+
 export interface MusicState {
     artistData: Artist | null;
     error: string | null;
     artistsData: Artist[];
     tracks: Track[] | null;
     trackId: TrackType | null;
-    albums: Album[] | null;
+    albums: {
+        items: Album[];
+    }
     albumId: Album | null;
     token: string | null;
 }

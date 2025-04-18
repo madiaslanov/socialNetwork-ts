@@ -1,7 +1,7 @@
 import Header from "./ui/header";
 import { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchAuthUser, logout } from "../../features/auth/authReducer.ts";
+import { fetchAuthUser, logout } from "../../features/auth/model/authReducer.ts";
 import { UseAppDispatch, UseAppSelector } from "../../services/reactHooks/reactHooks.ts";
 
 const HeaderContainer = () => {
@@ -16,19 +16,15 @@ const HeaderContainer = () => {
 
     useEffect(() => {
         if (!isAuth) {
-            dispatch(fetchAuthUser());
+            dispatch(fetchAuthUser()).unwrap().catch(() => {
+                navigate("/login");
+            });
         }
-    }, [dispatch]);
+    }, [isAuth, dispatch, navigate]);
 
-    useEffect(() => {
-        if (!isAuth) {
-            navigate("/login");
-        }
-    }, [isAuth, navigate]);
 
-    if (!isAuth) return null;
 
-    return <Header userData={userData} logOutUser={logOutUser} isAuth={userData.isAuth} />;
+    return <Header userData={userData} logOutUser={logOutUser} isAuth={isAuth} />;
 };
 
 export default HeaderContainer;

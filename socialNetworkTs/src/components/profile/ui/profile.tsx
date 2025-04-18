@@ -1,10 +1,10 @@
 import ProfileInfo from "./profileInfo/profileInfo";
 import style from "./profile.module.css"
 import MyPosts from "./myPost/myPosts.tsx";
-import {PhotosType} from "../model/profileTypes.ts";
+import {AboutMeType, PhotosType} from "../model/profileTypes.ts";
 
 interface ProfileProps {
-    profileData: number | null;
+    profileData: AboutMeType | null;
     profileStatus: string | null;
     profilePhoto: PhotosType | null | File;
     isOwner: boolean;

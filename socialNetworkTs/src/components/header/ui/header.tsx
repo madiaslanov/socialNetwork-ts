@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import st from "../style/header.module.css";
-import { UserAuthState } from "../../../features/auth/authTypes";
+import { UserAuthState } from "../../../features/auth/model/authTypes.ts";
 
 interface HeaderProps {
     userData: UserAuthState;

@@ -9,7 +9,7 @@ const initialState: ProfileStateType = {
     profileId: null,
     status: "",
     photos: null,
-    aboutMe: null,
+    aboutProfile: null,
 };
 
 export const getProfileStatus = createAsyncThunk<
@@ -69,7 +69,7 @@ export const profileAboutMe = createAsyncThunk<AboutMeType, AboutMeType, {reject
 
 export const getProfile = createAsyncThunk<{
     profileId: number,
-    aboutMe: AboutMeType,
+    aboutProfile: AboutMeType,
     photos: PhotosType,
 }, number, { rejectValue: string }>(
     "profile/getProfile",
@@ -78,7 +78,7 @@ export const getProfile = createAsyncThunk<{
             const response = await getProfileApi(userId);
             return {
                 profileId: userId,
-                aboutMe: response.aboutMe,
+                aboutProfile: response,
                 photos: response.photos,
             };
         } catch (err: any) {
@@ -112,11 +112,11 @@ const profileSlice = createSlice({
                 state.photos = action.payload;
             })
             .addCase(profileAboutMe.fulfilled, (state, action) => {
-                state.aboutMe = action.payload;
+                state.aboutProfile = action.payload;
             })
             .addCase(getProfile.fulfilled, (state, action) => {
                 state.profileId = action.payload.profileId;
-                state.aboutMe = action.payload.aboutMe;
+                state.aboutProfile = action.payload.aboutProfile;
                 state.photos = action.payload.photos;
             });
 

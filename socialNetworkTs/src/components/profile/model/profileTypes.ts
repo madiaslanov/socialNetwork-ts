@@ -23,13 +23,13 @@ export type ProfileStateType = {
     profileId: number | null;
     status: string | null;
     photos: PhotosType | null | File;
-    aboutMe: AboutMeType | null;
+    aboutProfile: AboutMeType | null;
 };
 
 
 export interface ProfileFormFields {
     fullName: string;
-    aboutMe: string;
+    aboutProfile: string;
     lookingForAJob: boolean;
     lookingForAJobDescription: string;
     contactsGithub: string;

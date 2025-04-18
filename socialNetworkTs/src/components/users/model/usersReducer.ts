@@ -21,7 +21,7 @@ export const fetchUsers = createAsyncThunk<{ items: UserData[]; totalCount: numb
     'users/fetchUsers',
     async (_, {getState, rejectWithValue}) => {
         const state: any = getState();
-        const {currentPage, pageSize} = state.users;
+        const { currentPage, pageSize } = state.usersPages;
         try {
             const response = await getUsersApi(currentPage, pageSize);
             return response;

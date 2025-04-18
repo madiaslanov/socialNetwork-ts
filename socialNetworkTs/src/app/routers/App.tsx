@@ -1,12 +1,9 @@
 import '../style/App.css'
-import {HashRouter, Route, Routes} from "react-router-dom";
-import {Suspense} from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {lazy, Suspense} from "react";
 import Header from "../../components/header/headerContainer.tsx";
-import HeaderContainer from "../../components/header/headerContainer.tsx";
 import Nav from "../../features/navbar/nav.tsx";
 import Preloader from "../../features/preloader/preloader.tsx";
-import UsersContainer from "../../components/users/usersContainer.tsx";
-import MusicApi from "../../components/music/musicContainer.tsx";
 import Track from "../../components/music/ui/track/track.tsx";
 import Playlists from "../../components/music/ui/playlists/playlists.tsx";
 import Albums from "../../components/music/ui/albums/albums.tsx";
@@ -16,12 +13,16 @@ import Artist from "../../components/music/ui/artists/artist/artist.tsx";
 import Settings from "../../components/settings/settings.tsx";
 import DialogsContainer from "../../components/dialogs/dialogsContainer.tsx";
 import NewsContainer from "../../components/news/newsContainer.tsx";
-import ProfileContainer from "../../components/profile/profileContainer.tsx";
+import Login from "../../features/auth/ui/login.tsx";
 
+
+const ProfileContainer = lazy(() => import("../../components/profile/profileContainer.tsx"));
+const UsersContainer = lazy(() => import("../../components/users/usersContainer.tsx"));
+const MusicContainer = lazy(() => import("../../components/music/musicContainer.tsx"))
 
 const App = () => {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <div className="app-AllSection">
@@ -32,10 +33,10 @@ const App = () => {
                                 <Route path="/profile/:userID?" element={<ProfileContainer/>}/>
                                 <Route path="/dialogs/*" element={<DialogsContainer/>}/>
                                 <Route path="/news/general" element={<NewsContainer/>}/>
-                                <Route path="/music" element={<MusicApi/>}/>
+                                <Route path="/music" element={<MusicContainer/>}/>
                                 <Route path="/users" element={<UsersContainer/>}/>
-                                <Route path="/login" element={<HeaderContainer/>}/>
                                 <Route path="/music/artists" element={<Artists/>}/>
+                                <Route path="/login" element={<Login/>}/>
                                 <Route path="/music/artist/:id" element={<Artist/>}/>
                                 <Route path="/music/albums" element={<Albums/>}/>
                                 <Route path="/music/playlists" element={<Playlists/>}/>
@@ -47,7 +48,7 @@ const App = () => {
                     </div>
                 </div>
             </div>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

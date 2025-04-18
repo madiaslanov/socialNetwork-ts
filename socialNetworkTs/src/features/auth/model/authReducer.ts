@@ -1,5 +1,5 @@
 import {AuthState, UserAuthState} from "./authTypes.ts";
-import {getAuthUserApi, getSecurityApi, loginUserApi, logoutUserApi} from "./api";
+import {getAuthUserApi, getSecurityApi, loginUserApi, logoutUserApi} from "../api";
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 
 const initialState: AuthState = {
@@ -108,7 +108,7 @@ const authSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchAuthUser.fulfilled, (state, action) => {
-                Object.assign(state, action.payload);
+                state.userState = action.payload;
                 state.messages = [];
             })
             .addCase(fetchAuthUser.rejected, (state, action) => {
@@ -120,7 +120,7 @@ const authSlice = createSlice({
             })
 
             .addCase(logout.fulfilled, (state, action) => {
-                Object.assign(state, action.payload);
+                state.userState = action.payload;
                 state.messages = [];
                 state.captcha = null;
             })

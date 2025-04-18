@@ -11,7 +11,9 @@ const initialState: MusicState = {
     artistsData: [],
     tracks: [],
     trackId: null,
-    albums: [],
+    albums: {
+        items: [],
+    },
     albumId: null,
     token: null
 };
@@ -83,7 +85,7 @@ export const getAlbums = createAsyncThunk<Album[], undefined, { rejectValue: str
         try {
             const token = await musicApi.getSpotifyToken()
             const data = await musicApi.getAlbums(token);
-            return data;
+            return data.albums.items;
         } catch (err: any) {
             return rejectWithValue(err.message);
         }
@@ -118,7 +120,7 @@ const musicSlice = createSlice({
                 state.trackId = action.payload;
             })
             .addCase(getAlbums.fulfilled, (state, action) => {
-                state.albums = action.payload;
+                state.albums.items = action.payload;
             })
             .addCase(getArtistTopTracks.fulfilled, (state, action) => {
                 state.tracks = action.payload;
